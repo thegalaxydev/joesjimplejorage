@@ -1,14 +1,19 @@
 package com.galaxy.jjj.block;
 
 import com.galaxy.jjj.JoesJimpleJorage;
+import com.galaxy.jjj.block.inventory_connector.InventoryConnector;
+import com.galaxy.jjj.block.inventory_connector.InventoryConnectorEntity;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +21,11 @@ import java.util.List;
 public class ModBlocks {
     //public static final Block MOON_BLOCK = registerBlock("moon_block",
     //        new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static List<Block> BLOCKS = new ArrayList<Block>() {};
+
+    public static final Block INVENTORY_CONNECTOR = registerBlock("inventory_connector",
+            new InventoryConnector(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+
+    public static List<Block> BLOCKS = new ArrayList<Block>();
 
     private static void registerCompatBlocks()
     {
@@ -36,6 +45,9 @@ public class ModBlocks {
     }
     public static void registerModBlocks() {
         registerCompatBlocks();
+
+        BLOCKS.add(INVENTORY_CONNECTOR);
+
         JoesJimpleJorage.LOGGER.info("Registering mod blocks for " + JoesJimpleJorage.MOD_ID + "!");
     }
 }
