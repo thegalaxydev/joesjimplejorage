@@ -18,7 +18,8 @@ public class ModCreativeModeTabs {
     {
         TO_THE_MOON = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
                 new ResourceLocation(JoesJimpleJorage.MOD_ID, "joesjimplejorage"),
-                FabricItemGroup.builder().title(Component.translatable("tab.joesjimplejorage")).displayItems(((itemDisplayParameters, output) -> {
+                FabricItemGroup.builder().title(Component.translatable("tab.joesjimplejorage"))
+                        .icon(() -> new ItemStack(ModBlocks.INVENTORY_CONNECTOR)).displayItems(((itemDisplayParameters, output) -> {
                             for (Item item : ModItems.ITEMS)
                             {
                                 output.accept(item);
@@ -28,8 +29,7 @@ public class ModCreativeModeTabs {
                             {
                                 output.accept(block);
                             }
-                        }))
-                        .build());
+                        })).build());
 
         JoesJimpleJorage.LOGGER.info("Registering creative mode tabs for " + JoesJimpleJorage.MOD_ID + "!");
     }

@@ -1,5 +1,6 @@
 package com.galaxy.jjj.datagen;
 
+import com.galaxy.jjj.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
@@ -10,6 +11,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
+        dropSelf(ModBlocks.INVENTORY_CONNECTOR);
     }
 }

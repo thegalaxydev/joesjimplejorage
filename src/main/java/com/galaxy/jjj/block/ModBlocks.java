@@ -13,7 +13,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class ModBlocks {
     //        new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 
     public static final Block INVENTORY_CONNECTOR = registerBlock("inventory_connector",
-            new InventoryConnector(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+            new InventoryConnector(FabricBlockSettings.create().sound(SoundType.WOOD).strength(2.0f, 3.0f)));
 
     public static List<Block> BLOCKS = new ArrayList<Block>();
 
@@ -35,7 +37,6 @@ public class ModBlocks {
     private static Block registerBlock(String name, Block block)
     {
         registerBlockItem(name, block);
-
         return Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(JoesJimpleJorage.MOD_ID, name), block);
     }
     private static void registerBlockItem(String name, Block block)
