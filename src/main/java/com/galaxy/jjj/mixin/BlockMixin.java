@@ -2,8 +2,6 @@ package com.galaxy.jjj.mixin;
 
 import com.galaxy.jjj.event.BlockBreakCallback;
 import com.galaxy.jjj.event.BlockPlaceCallback;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
